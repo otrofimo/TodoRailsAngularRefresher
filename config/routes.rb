@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root 'tasks#index'
+
+  resources 'tasks'
+
+  # For single page routing to work correctly
+  match '*otherwise' => 'tasks#index', via: [:get]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

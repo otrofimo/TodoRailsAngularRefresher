@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use bower for front end asset management
 gem 'bower-rails'
 
+gem 'rails-api'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,0 +1,39 @@
+<div ng-app="todo">
+  <div class="container-fluid">
+    <ui-view></ui-view>
+  </div>
+
+  <script type="text/ng-template" id="/index.html">
+    <div class="panel panel-success">
+      <div>
+        <ul>
+          <li ng-repeat="task in tasks">
+            <task my-task='task'></task>
+          </li>
+        </ul>
+      </div>
+      <hr>
+      <form ng-submit="submit()">
+        Title
+        <input type='text' ng-model="newTodo.title" />
+        <br>
+        Description
+        <textarea ng-model="newTodo.description"></textarea>
+        <br>
+        <input class='btn' type='submit' value='submit' />
+      </form>
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="/task.html">
+    <a ui-sref="show({id: myTask.id})"><h4>TASK: {{myTask.title}}</h4></a>
+    <p>{{myTask.description}}</p>
+    <input type="checkbox" ng-checked='myTask.complete' />
+  </script>
+
+  <script type="text/ng-template" id="/show.html">
+    <a ui-sref="home">Go back</a>
+    <h2>Task #{{currentTask.id}}</h2>
+    <task my-task='currentTask'></task>
+  </script>
+</div>

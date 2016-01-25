@@ -1,2 +1,5 @@
 asset 'angular'
 asset 'bootstrap-sass-official'
+asset 'angular-ui-router'
+asset 'lodash', '~> 3.10.0'
+asset 'restangular'

@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lodash/lodash
 //= require angular/angular
+//= require restangular/dist/restangular
+//= require angular-ui-router/release/angular-ui-router
 //= require_tree .
