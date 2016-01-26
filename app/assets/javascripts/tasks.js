@@ -79,6 +79,10 @@ todo.service('TasksService', function(Restangular) {
   this.createTask = function(task) {
     return base.post(task);
   };
+
+  this.updateTask = function(task) {
+    return task.put(task['id'])
+  }
 });
 
 todo.directive('task', function() {
@@ -89,7 +93,9 @@ todo.directive('task', function() {
     controller: TaskController
   };
 
-  function TaskController($scope) {
-
+  function TaskController($scope, TasksService) {
+    $scope.toggleCheck = function(myTask) { 
+      TasksService.updateTask(myTask)
+    }
   }
 });
