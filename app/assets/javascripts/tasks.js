@@ -59,7 +59,6 @@ todo.controller('TasksController', function($scope, TasksService) {
 todo.controller('ShowTaskController', 
   function($scope, $stateParams, TasksService) {
     TasksService.getTask($stateParams.id).then(function(res) {
-      console.log(res);
       $scope.currentTask = res;
     })
   }
@@ -81,7 +80,7 @@ todo.service('TasksService', function(Restangular) {
   };
 
   this.updateTask = function(task) {
-    return task.put(task['id'])
+    return task.put()
   }
 });
 
